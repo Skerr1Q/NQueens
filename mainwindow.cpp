@@ -19,9 +19,12 @@ void MainWindow::on_spinBox_board_valueChanged(int arg1)
     board.N = arg1;
 }
 
+static int k;
+
 void MainWindow::on_pushButton_perm_clicked()
 {
     ui->textEdit->clear();
+    k = 0;
     QVector<int> queens = QVector<int>();
     backtrack(queens,0,board.N);
 }
@@ -30,7 +33,7 @@ void MainWindow::backtrack(QVector<int>& queens, int current_row, int N)
 {
     if(board.is_solution(queens, N))
     {
-        ui->textEdit->append(board.print_solution(queens,N));
+        ui->textEdit->append(QString::number(++k).append(". ").append(board.get_solution(queens,N)));
     }
     else
     {
