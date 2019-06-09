@@ -129,7 +129,7 @@ p, li { white-space: pre-wrap; }
          <item>
           <widget class="QSpinBox" name="spinBox_board">
            <property name="minimum">
-            <number>0</number>
+            <number>1</number>
            </property>
            <property name="maximum">
             <number>26</number>
